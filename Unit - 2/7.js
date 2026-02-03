@@ -53,12 +53,6 @@ function playground(){
 
 }
 
-
-
-
-
 finishhw(function(){
-    Dinner(function(){
-        playground();
-    })
+    Dinner(function(){playground();})
 })
