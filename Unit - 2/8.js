@@ -14,10 +14,13 @@ console.log(p)
 p.then((msg)=>{
     console.log(msg)
 }).catch((err)=>{
-    console.log(err)
+    console.log(err) 
 }).finally(()=>{
     console.log("Finally Block !!!!!!!!!!!")
 })
+
+
+
 
 
 
