@@ -87,9 +87,10 @@ try{
 
 //Fetching data from database
 
-async function getData(){
+async function getDataa(){
     const response = await fetch("https://dummyjson.com/products")
     const data = await response.json()
+    //console.log(response)
     console.log(data)
     console.log(data.products[0])
     data.products.forEach((product) => {
@@ -99,5 +100,32 @@ async function getData(){
 
 }
 
-getData()
+getDataa()
 
+//Try - catch while fetching data
+
+async function getData(){
+    try{
+    const response = await fetch("https://dummyjson.com/products")
+    if (response.ok == false){
+        throw new Error ("Something went wrong ..")
+    }
+    const data = await response.json()
+    //console.log(response)
+    console.log(response.status)
+    console.log(data)
+    console.log(data.products[0].title)
+    data.products.forEach((product) => {
+        console.log(product.title)
+        
+    })
+    
+
+
+    }catch(e){
+    console.log(e)
+    }finally{
+        console.log("Finally Block ..")
+    }}
+
+getData()
