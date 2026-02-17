@@ -84,6 +84,9 @@ try{
     console.warn(e)  
 }
 
+
+//Fetching data from database
+
 async function getData(){
     const response = await fetch("https://dummyjson.com/products")
     const data = await response.json()
@@ -97,3 +100,4 @@ async function getData(){
 }
 
 getData()
+
