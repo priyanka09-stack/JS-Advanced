@@ -14,7 +14,7 @@ async function sendData(){
             title:"New Product",
             description:"This is a new product.",
             price:100,
-            dicountPercentage:90,
+            discountPercentage:90,
             rating:4.5,
             stock:50,
             brand:"Haier",
@@ -38,8 +38,8 @@ localStorage.setItem("age",18)
 
 
 //To print it on console
-console.log(localStorage.getItem("name","Priyanka"))
-console.log(localStorage.getItem("age",18))
+console.log(localStorage.getItem("name"))
+console.log(localStorage.getItem("age"))
 
 
 //Modifying data
@@ -51,7 +51,7 @@ console.log(localStorage.getItem("name","Priyanka"))
 
 
 
-//Sesion Storage  -- Temporarily Stored
+//Session Storage  -- Temporarily Stored
 
 //Storing data in session storage 
 sessionStorage.setItem("name","Riiiiii")
@@ -65,3 +65,61 @@ console.log(sessionStorage.getItem("age"))
 
 //Removing data from Session Storage
 sessionStorage.removeItem("name")
+
+//Cookie Storage
+
+document.cookie ="name=Priyanka; expires=Fri, 31 Dec 2024 23:59:59 UTC; "
+document.cookie ="age=18; expires=Fri, 01 Mar 2026 23:59:59 UTC; "
+
+console.log(document.cookie)
+
+
+//Generator Function
+
+function* numGenerator(){
+    //yield 1
+    //yield 2
+    //yield 3
+    let index= 2501730192
+    while(true){
+        yield index
+        index++
+    }
+}
+
+const gen = numGenerator()
+console.log(gen)
+console.log(gen.next())
+console.log(gen.next())
+console.log(gen.next())
+console.log(gen.next())
+
+
+//Currying
+//Normal Function
+function add(a,b,c){
+    return a+b+c  
+}
+console.log(add(1,2,3))
+
+
+//Currying Function
+
+function sum(a){
+    return function (b){
+        return function(c){
+            return a+b+c
+        }
+    }
+}
+
+const first = sum(1)                      //Step-by-step argument passing
+console.log(first)
+const second = first(2)
+console.log(second)
+console.log(second(3))
+
+console.log(sum(1)(2)(3))      //Multiple arguments passed  at once
+
+
+
