@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect } from 'react'
 import ArtStyle from "../css/Article.module.css"
 //import "../css/Article.css"
 
 function Article (){
     const [count ,setCount]=useState(0)
     const [countt ,setCountt]=useState(0)
+    const [name, setName] = useState("Priyanka")
     //let count =0;
+    useEffect(()=>{
+      console.log("Use Effect Called")
+      return()=>{
+        console.log("Use Effect Cleanup")
+      }
+    },[name])
 
     const handleIncrement = () => {
         //count+1;
@@ -30,8 +37,9 @@ function Article (){
         Further, sharing his insights on MI's bowling approach during their first two games and as a coach, how he helps strategise different scenarios.
 
         Paras said, "As a bowling group...we always discuss how to get wickets in the middle, execute our plans, maintain the pressure on oppositions and how to exploit individual strengths and weaknesses."</p>
-        
+        <h2>{name}</h2>
          <h2>{count}</h2>
+         <button className={ArtStyle.b} onClick={()=>setName("Johnn")}>Change Name</button>
         <button onClick={handleIncrement}>Increment</button>
         <h2>{countt}</h2>
         <button className={ArtStyle.g} onClick={handleDecrement}>Decrement</button>
